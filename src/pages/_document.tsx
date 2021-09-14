@@ -1,4 +1,11 @@
-import Document, { DocumentContext } from 'next/document';
+import Document, {
+  DocumentContext,
+  DocumentInitialProps,
+  Html,
+  Main,
+  NextScript,
+  Head,
+} from 'next/document';
 import { ServerStyleSheet } from 'styled-components';
 
 class AppDocument extends Document {
@@ -27,6 +34,26 @@ class AppDocument extends Document {
     } finally {
       sheet.seal();
     }
+  }
+  render() {
+    return (
+      <Html>
+        <Head>
+          <link rel="shortcut icon" href="favicon.png" type="image/png" />
+          <link rel="preconnect" href="https://fonts.gstatic.com" />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Rajdhani:wght@600&display=swap"
+            rel="stylesheet"
+          />
+        </Head>
+        <body>
+          <Main />
+          <NextScript />
+          {/* Here we pass the modal */}
+          <div id="modal-root"></div>
+        </body>
+      </Html>
+    );
   }
 }
 

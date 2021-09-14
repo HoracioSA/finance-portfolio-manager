@@ -53,15 +53,17 @@ type CryptoCurrencyListing = {
   >;
 };
 
+export type Coins = {
+  data: CryptoCurrencyListing[];
+  status: CmcStatus;
+};
+
 /**
  * Get list of available coins.
  * Documentation: https://coinmarketcap.com/api/documentation/v1/#operation/getV1CryptocurrencyListingsLatest
  */
 const getCoinsList = async () => {
-  const { data } = await client.get<{
-    data: CryptoCurrencyListing[];
-    status: CmcStatus;
-  }>(CmcEndpoint.LatestCoinsListing);
+  const { data } = await client.get<Coins>(CmcEndpoint.LatestCoinsListing);
 
   return data;
 };

@@ -14,14 +14,17 @@
     "prettier": "prettier --write \"src/**/*.{ts,tsx}\""
   },
   "dependencies": {
+    "@styled-icons/fa-solid": "^10.34.0",
     "axios": "^0.21.1",
     "eslint-config-import": "^0.13.0",
+    "framer-motion": "^4.1.17",
     "next": "latest",
     "pino": "^6.11.3",
     "prettier": "^2.3.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "styled-components": "^5.2.3",
+    "styled-icons": "^10.39.0",
     "styled-reset": "^4.3.4"
   },
   "devDependencies": {
